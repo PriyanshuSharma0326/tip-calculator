@@ -11,9 +11,9 @@ html {
 }
 
 :root {
-    --primary-radius: 2.75rem;
-    --secondary-radius: 50%;
-    
+    --primary-radius: 1rem;
+    --secondary-radius: 0.25rem;
+
     --strong-cyan: hsl(172, 67%, 45%);
     --very-dark-cyan: hsl(183, 100%, 15%);
     --dark-grayish-cyan: hsl(186, 14%, 43%);
@@ -30,13 +30,216 @@ img {
     -o-object-fit: contain;
 }
 
+input, button {
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 0.35rem 1rem;
+    border: 2px solid transparent;
+    border-radius: var(--secondary-radius);
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    color: var(--grayish-cyan);
+}
+
+label {
+    font-size: 0.75rem;
+    color: var(--dark-grayish-cyan);
+}
+
 body {
     max-width: 100vw;
     height: 100vh;
     background-color: var(--light-grayish-cyan);
 
     font-family: 'Space Mono', monospace;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.hero-image {
+    /* text-align: center; */
+}
+
+.container {
+    /* background-color: var(--white); */
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: var(--primary-radius);
+
+    display: flex;
+    gap: 1.5rem;
+    background-color: var(--white);
+}
+
+.form-section {
+    width: 51%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.bill-input-container {
+    position: relative;
+}
+
+.bill-input-container input {
+    padding-left: 3rem;
+    text-align: right;
+}
+
+.bill-input-container::before {
+    background-image: url(../images/icon-dollar.svg);
+    content: "";
+    width: 0.65rem;
+    height: 0.9rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.tip-input-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 0.75rem;
+    column-gap: 0.75rem;
+}
+
+#custom-tip {
+    padding: 0;
+    background-color: var(--very-light-grayish-cyan);
+    cursor: text;
+    color: var(--very-dark-cyan);
+}
+
+#custom-tip::placeholder {
+    color: var(--dark-grayish-cyan);
+}
+
+.tip-input-container input {
+    text-align: center;
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.tip-input-container input:focus {
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+}
+
+.people-count-input-container {
+    position: relative;
+}
+
+.people-count-input-container input {
+    padding-left: 3rem;
+    text-align: right;
+}
+
+.people-count-input-container::before {
+    background-image: url(../images/icon-person.svg);
+    content: "";
+    width: 0.65rem;
+    height: 0.9rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.result-section {
+    width: 49%;
+    background-color: var(--very-dark-cyan);
+    border-radius: var(--primary-radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result-display {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.total-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amount-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.result-title {
+    font-size: 0.75rem;
+    margin: 0;
+    color: var(--white);
+}
+
+.division {
+    font-size: 0.6rem;
+    color: var(--grayish-cyan);
+}
+
+.tip-amount, .total-amount {
+    font-size: 2rem;
+    color: var(--strong-cyan);
+}
+
+.reset-button {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    border-radius: var(--secondary-radius);
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    opacity: 30%;
+}
+
+.reset-button.active {
+    opacity: 100%;
+    cursor: pointer;
 }

@@ -10,6 +10,75 @@
     </head>
     <body>
         <main>
+            <img src="./images/logo.svg" alt="" class="hero-image">
+
+            <div class="container">
+                <form class="form-section">
+                    <div class="form-group">
+                        <div class="form-label">
+                            <label for="bill">Bill</label>
+                        </div>
+                        
+                        <div class="bill-input-container">
+                            <input min="1" type="number" placeholder="0" id="bill">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">
+                            <label>Select Tip %</label>
+                        </div>
+
+                        <div class="tip-input-container">
+                            <input type="text" name="tip" value="5%" readonly>
+                            <input type="text" name="tip" value="10%" readonly>
+                            <input type="text" name="tip" value="15%" readonly>
+                            <input type="text" name="tip" value="25%" readonly>
+                            <input type="text" name="tip" value="50%" readonly>
+                            <input min="1" max="100" type="number" name="custom-tip" placeholder="Custom" class="custom-tip" id="custom-tip">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-label">
+                            <label for="people-count">Number of People</label>
+                        </div>
+                        
+                        <div class="people-count-input-container">
+                            <input min="1" type="number" placeholder="0" id="people-count">
+                        </div>
+                    </div>
+                </form>
+    
+                <div class="result-section">
+                    <div class="result-display">
+                        <div class="total-container">
+                            <div class="amount-left">
+                                <h1 class="result-title">Tip Amount</h1>
+                                <h2 class="division">/ person</h2>
+                            </div>
+    
+                            <div class="amount-right">
+                                <text class="tip-amount">$0.00</text>
+                            </div>
+                        </div>
+    
+                        <div class="total-container">
+                            <div class="amount-left">
+                                <h1 class="result-title">Total</h1>
+                                <h2 class="division">/ person</h2>
+                            </div>
+                            <div class="amount-right">
+                                <text class="total-amount">$0.00</text>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="reset-button" id="reset-button">
+                        reset
+                    </button>
+                </div>
+            </div>
         </main>
         <script src="./script.js"></script>
     </body>
