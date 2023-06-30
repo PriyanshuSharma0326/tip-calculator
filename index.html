@@ -13,10 +13,11 @@
             <img src="./images/logo.svg" alt="" class="hero-image">
 
             <div class="container">
-                <form class="form-section">
+                <form class="form-section" id="form-section" novalidate>
                     <div class="form-group">
                         <div class="form-label">
                             <label for="bill">Bill</label>
+                            <text class="bill-error" id="bill-error"></text>
                         </div>
                         
                         <div class="bill-input-container">
@@ -27,14 +28,25 @@
                     <div class="form-group">
                         <div class="form-label">
                             <label>Select Tip %</label>
+                            <text class="tip-error" id="tip-error"></text>
                         </div>
 
                         <div class="tip-input-container">
-                            <input type="text" name="tip" value="5%" readonly>
-                            <input type="text" name="tip" value="10%" readonly>
-                            <input type="text" name="tip" value="15%" readonly>
-                            <input type="text" name="tip" value="25%" readonly>
-                            <input type="text" name="tip" value="50%" readonly>
+                            <input class="tip-5-percent" id="tip-5-percent" type="radio" name="tip-percent" value="5" hidden>
+                            <label for="tip-5-percent">5%</label>
+
+                            <input class="tip-10-percent" id="tip-10-percent" type="radio" name="tip-percent" value="10" hidden>
+                            <label for="tip-10-percent">10%</label>
+
+                            <input class="tip-15-percent" id="tip-15-percent" type="radio" name="tip-percent" value="15" hidden>
+                            <label for="tip-15-percent">15%</label>
+
+                            <input class="tip-25-percent" id="tip-25-percent" type="radio" name="tip-percent" value="25" hidden>
+                            <label for="tip-25-percent">25%</label>
+
+                            <input class="tip-50-percent" id="tip-50-percent" type="radio" name="tip-percent" value="50" hidden>
+                            <label for="tip-50-percent">50%</label>
+
                             <input min="1" max="100" type="number" name="custom-tip" placeholder="Custom" class="custom-tip" id="custom-tip">
                         </div>
                     </div>
@@ -42,12 +54,17 @@
                     <div class="form-group">
                         <div class="form-label">
                             <label for="people-count">Number of People</label>
+                            <text class="people-error" id="people-error"></text>
                         </div>
                         
                         <div class="people-count-input-container">
                             <input min="1" type="number" placeholder="0" id="people-count">
                         </div>
                     </div>
+
+                    <button hidden class="submit-button">
+                        submit
+                    </button>
                 </form>
     
                 <div class="result-section">
@@ -59,7 +76,7 @@
                             </div>
     
                             <div class="amount-right">
-                                <text class="tip-amount">$0.00</text>
+                                <text class="tip-amount" id="tip-amount">$0.00</text>
                             </div>
                         </div>
     
@@ -69,7 +86,7 @@
                                 <h2 class="division">/ person</h2>
                             </div>
                             <div class="amount-right">
-                                <text class="total-amount">$0.00</text>
+                                <text class="total-amount" id="total-amount">$0.00</text>
                             </div>
                         </div>
                     </div>

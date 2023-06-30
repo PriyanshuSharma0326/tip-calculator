@@ -30,7 +30,7 @@ img {
     -o-object-fit: contain;
 }
 
-input, button {
+input, button, .tip-input-container > label {
     width: 100%;
     font-size: 1.15rem;
     padding: 0.35rem 1rem;
@@ -40,6 +40,14 @@ input, button {
     color: var(--very-dark-cyan);
     outline: none;
     border: none;
+}
+
+.error-outline {
+    outline: 2px solid red;
+}
+
+.free-outline {
+    outline: 2px solid var(--strong-cyan);
 }
 
 input::placeholder {
@@ -102,6 +110,16 @@ main {
     gap: 0.5rem;
 }
 
+.form-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bill-error, .people-error, .tip-error {
+    font-size: 0.75rem;
+    color: red;
+}
+
 .bill-input-container {
     position: relative;
 }
@@ -144,6 +162,20 @@ main {
     color: var(--dark-grayish-cyan);
 }
 
+.tip-input-container > label {
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 0.35rem 1rem;
+    border: 2px solid transparent;
+    border-radius: var(--secondary-radius);
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    outline: none;
+    border: none;
+    text-align: center;
+    transition: all .3s ease-out;
+}
+
 .tip-input-container input {
     text-align: center;
     background-color: var(--very-dark-cyan);
@@ -151,7 +183,11 @@ main {
     cursor: pointer;
 }
 
-.tip-input-container input:focus {
+.tip-5-percent[type="radio"]:checked + label, 
+.tip-10-percent[type="radio"]:checked + label, 
+.tip-15-percent[type="radio"]:checked + label, 
+.tip-25-percent[type="radio"]:checked + label, 
+.tip-50-percent[type="radio"]:checked + label {
     color: var(--very-dark-cyan);
     background-color: var(--strong-cyan);
 }
@@ -242,4 +278,11 @@ main {
 .reset-button.active {
     opacity: 100%;
     cursor: pointer;
+}
+
+.error-text {
+    margin-top: -2rem;
+    color: red;
+
+    text-transform: uppercase;
 }
