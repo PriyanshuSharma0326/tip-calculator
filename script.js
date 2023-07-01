@@ -29,6 +29,17 @@ form.addEventListener('submit', (e) => {
         }
         if (inputs[i].type === 'radio' && inputs[i].checked) {
             radio = Number(inputs[i].value);
+
+            if(customTip.value) {
+                tipErrorElement.innerText = '';
+                if(customTip.classList.contains('error-outline')) {
+                    customTip.classList.remove('error-outline');
+                }
+                if(customTip.classList.contains('free-outline')) {
+                    customTip.classList.remove('free-outline');
+                }
+                customTip.value = undefined;
+            }
         }
         if(inputs[i].id === 'custom-tip' && radio === undefined) {
             radio = Number(inputs[i].value);
@@ -38,19 +49,28 @@ form.addEventListener('submit', (e) => {
         }
     }
 
-    if(radio < 1 || radio > 100) {
-        tipErrorElement.innerText = '1 < Tip < 100';
+    if(radio < 0 || radio > 100) {
+        tipErrorElement.innerText = '0 < Tip < 101';
         if(customTip.classList.contains('free-outline')) {
             customTip.classList.remove('free-outline');
         }
         customTip.classList.add('error-outline');
+    }
+    if(customTip.value) {
+        tipErrorElement.innerText = '';
+        if(customTip.classList.contains('error-outline')) {
+            customTip.classList.remove('error-outline');
+        }
+        customTip.classList.add('free-outline');
     }
     else {
         tipErrorElement.innerText = '';
         if(customTip.classList.contains('error-outline')) {
             customTip.classList.remove('error-outline');
         }
-        customTip.classList.add('free-outline');
+        if(customTip.classList.contains('free-outline')) {
+            customTip.classList.remove('free-outline');
+        }
     }
 
     if(billAmount < 1) {
@@ -82,7 +102,7 @@ form.addEventListener('submit', (e) => {
         peopleCountInput.classList.add('free-outline');
     }
 
-    if((radio > 0 && radio < 101) && (billAmount > 0) && (people > 0)) {
+    if((radio >= 0 && radio <= 100) && (billAmount > 0) && (people > 0)) {
         tipValue = (billAmount/people)*(radio/100);
         totalValue = (billAmount/people) + tipValue;
 
@@ -92,8 +112,6 @@ form.addEventListener('submit', (e) => {
         resetButton.classList.add('active');
     }
 });
-
-// document.addEventListener()
 
 const uncheck = () => {
     radio = undefined;
