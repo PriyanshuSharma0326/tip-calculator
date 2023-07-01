@@ -13,6 +13,7 @@ html {
 :root {
     --primary-radius: 1rem;
     --secondary-radius: 0.25rem;
+    --inner-radius: 0.65rem;
 
     --strong-cyan: hsl(172, 67%, 45%);
     --very-dark-cyan: hsl(183, 100%, 15%);
@@ -219,7 +220,7 @@ main {
 .result-section {
     width: 49%;
     background-color: var(--very-dark-cyan);
-    border-radius: var(--primary-radius);
+    border-radius: var(--inner-radius);
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -286,4 +287,68 @@ main {
     color: red;
 
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 376px) {
+    .bill-input-container::before {
+        width: 0.55rem;
+        height: 0.8rem;
+        left: 0.85rem;
+    }
+
+    .people-count-input-container::before {
+        width: 0.55rem;
+        height: 0.8rem;
+        left: 0.85rem;
+    }
+
+    label {
+        font-size: 0.65rem;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: var(--primary-radius) var(--primary-radius) 0 0;
+    }
+
+    main {
+        margin-top: 3rem;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .form-section {
+        width: 100%;
+        padding: 0.25rem;
+    }
+
+    .tip-input-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        /* row-gap: 0.75rem;
+        column-gap: 0.75rem; */
+    }
+
+    .result-section {
+        width: 100%;
+        padding: 1rem;
+        gap: 1.25rem;
+    }
+
+    .result-display {
+        gap: 1.25rem;
+    }
+
+    .result-title {
+        font-size: 0.65rem;
+    }
+
+    .division {
+        font-size: 0.55rem;
+    }
+
+    .tip-amount, .total-amount {
+        font-size: 1.5rem;
+    }
 }
