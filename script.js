@@ -131,6 +131,33 @@ resetButton.addEventListener('click', () => {
 
         tipAmountElement.innerText = `$${tipValue.toFixed(2)}`;
         totalAmountElement.innerText = `$${totalValue.toFixed(2)}`;
+
+        uncheck();
+        customTip.value = undefined;
+        billInput.value = undefined;
+        peopleCountInput.value = undefined;
+
+        if(customTip.classList.contains('error-outline')) {
+            customTip.classList.remove('error-outline');
+        }
+        if(customTip.classList.contains('free-outline')) {
+            customTip.classList.remove('free-outline');
+        }
+
+        if(billInput.classList.contains('error-outline')) {
+            billInput.classList.remove('error-outline');
+        }
+        if(billInput.classList.contains('free-outline')) {
+            billInput.classList.remove('free-outline');
+        }
+
+        if(peopleCountInput.classList.contains('error-outline')) {
+            peopleCountInput.classList.remove('error-outline');
+        }
+        if(peopleCountInput.classList.contains('free-outline')) {
+            peopleCountInput.classList.remove('free-outline');
+        }
+
         resetButton.classList.remove('active');
     }
 });
