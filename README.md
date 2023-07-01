@@ -1,6 +1,6 @@
 # Tip Calculator App
 
-![Design preview for Tic Tac Toe Game](./design/desktop-design.jpg)
+![Design preview for Tic Tac Toe Game](./design/desktop-design.png)
 
 This is a Tip Calculator App, a front-end challenge project from [Frontend Mentor](https://www.frontendmentor.io/). It allows users to calculate the tip amount based on the bill total and the selected tip percentage.
 
