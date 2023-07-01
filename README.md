@@ -33,13 +33,13 @@ To run this project, you need a web browser installed on your computer.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/PriyanshuSharma0326/tip-calculator-app.git
+git clone https://github.com/PriyanshuSharma0326/tip-calculator.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd tip-calculator-app
+cd tip-calculator
 ```
 
 3. Open the index.html file in your web browser.
